@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset Password | VanConnect</title>
+  <style>
+    :root {
+      --primary: #2c5a85;
+      --accent: #fbbf24;
+      --text-light: #666;
+      --radius: 12px;
+      --transition: 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #457dad, #2c5a85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      width: 100%;
+      max-width: 380px;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.7rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    p {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    input {
+      padding: 0.8rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      width: 100%;
+      font-size: 0.95rem;
+      transition: border var(--transition);
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: bold;
+      padding: 0.8rem;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn:hover {
+      background: #f59e0b;
+      transform: translateY(-2px);
+    }
+
+    .message {
+      text-align: center;
+      font-size: 0.9rem;
+      color: green;
+      display: none;
+    }
+
+    .links {
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔑 Reset Password</h1>
+    <p>Create a new password for your account.</p>
+
+    <input type="password" id="newPass" placeholder="New password" required>
+    <input type="password" id="confirmPass" placeholder="Confirm password" required>
+    <button class="btn" onclick="resetPassword()">Update Password</button>
+
+    <p class="message" id="msg">✅ Password updated successfully! You can now log in.</p>
+
+    <div class="links">
+      <a href="login.html">← Back to Login</a>
+    </div>
+  </div>
+
+  <script>
+    function resetPassword() {
+      const newPass = document.getElementById("newPass").value.trim();
+      const confirmPass = document.getElementById("confirmPass").value.trim();
+      const msg = document.getElementById("msg");
+
+      if (newPass.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+      if (newPass !== confirmPass) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // For now, just show success message
+      msg.style.display = "block";
+      document.getElementById("newPass").value = "";
+      document.getElementById("confirmPass").value = "";
+
+      // Later connect with Firebase:
+      // firebase.auth().confirmPasswordReset(actionCode, newPass)
+      //   .then(() => msg.style.display = "block")
+      //   .catch(err => alert(err.message));
+    }
+  </script>
+</body>
+</html>
