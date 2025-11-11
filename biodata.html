@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bio-data — Vaishnavi V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+
+</head>
+<body onload="renderBiodata()">
+  <header class="topbar">
+    <h1 class="brand title animate-title">Bio-data</h1>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="form.html" class="nav-link">Edit</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌿</button>
+    </nav>
+  </header>
+
+  <main class="container fade-in">
+    <section id="biodataArea" class="card biodata-card">
+      <!-- Rendered by script.js -->
+    </section>
+
+    <div class="download-row">
+      <button class="btn primary" onclick="downloadBiodataPDF()">Download as PDF</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Generated from browser localStorage • Works offline</p>
+  </footer>
+</body>
+</html>

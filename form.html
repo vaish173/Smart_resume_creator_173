@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Resume — Vaishnavi V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand title animate-title">Create Resume</h1>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="resume.html" class="nav-link">Preview</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌿</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <form id="resumeForm" class="card form-card fade-in" onsubmit="saveForm(event)">
+      <div class="steps" id="formSteps">
+        <!-- Step 1: Personal -->
+        <div class="step" data-step="1">
+          <h2>Personal Details</h2>
+          <div class="grid">
+            <label>Full name<input name="name" required placeholder="Vaishnavi V"></label>
+            <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+            <label>Phone<input name="phone" placeholder="+91 9XXXXXXXXX"></label>
+            <label>DOB<input type="date" name="dob"></label>
+            <label>Gender
+              <select name="gender">
+                <option value="">Select</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Nationality<input name="nationality" placeholder="Indian"></label>
+          </div>
+        </div>
+
+        <!-- Step 2: Education & Skills -->
+        <div class="step" data-step="2">
+          <h2>Education</h2>
+          <textarea name="education" placeholder="B.E. Computer Science — University — Year" rows="3"></textarea>
+          <h3>Skills (comma separated)</h3>
+          <input name="skills" placeholder="JavaScript, HTML, CSS, ...">
+        </div>
+
+        <!-- Step 3: Projects / Achievements / Certs -->
+        <div class="step" data-step="3">
+          <h2>Projects</h2>
+          <textarea name="projects" placeholder="Project title - short description and link" rows="4"></textarea>
+          <h3>Achievements</h3>
+          <textarea name="achievements" placeholder="Any awards or notable achievements" rows="3"></textarea>
+          <h3>Certificates / Links (one per line)</h3>
+          <textarea name="certs" placeholder="https://..." rows="3"></textarea>
+        </div>
+
+        <!-- Step 4: Hobbies & Strengths -->
+        <div class="step" data-step="4">
+          <h2>Hobbies & Strengths</h2>
+          <h3>Hobbies</h3>
+          <input name="hobbies" placeholder="Reading, Music, Coding...">
+          <h3>Strengths</h3>
+          <input name="strengths" placeholder="Problem solving, Teamwork...">
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <div class="progress" id="formProgress"><div class="progress-bar" id="formProgressBar"></div></div>
+        <div class="form-actions">
+          <button type="button" id="prevBtn" class="btn ghost">Back</button>
+          <button type="button" id="nextBtn" class="btn primary">Next</button>
+          <button type="submit" id="saveBtn" class="btn primary" style="display:none">Save & Preview</button>
+          <a class="btn ghost" href="resume.html">Skip to Preview</a>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>Data stored in browser localStorage — works offline.</p>
+  </footer>
+</body>
+</html>

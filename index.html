@@ -1,13 +1,40 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VanConnect - VTS</title>
-    <link rel="manifest" href="/manifest.webmanifest" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vaishnavi V — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand">Vaishnavi V</h1>
+    <nav class="nav">
+      <a href="form.html" class="nav-link">Create Resume</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌿</button>
+    </nav>
+  </header>
+
+  <main class="container center">
+    <section class="hero card glass-card">
+      <h2 class="title animate-title">Hi everyone <span class="wave">👋</span></h2>
+      <p class="sub float">Welcome — create a modern, professional resume quickly.</p>
+
+      <div class="cta">
+        <a class="btn primary" href="form.html">Create Resume</a>
+        <div class="split">
+          <a class="btn ghost" href="resume.html">View Resume</a>
+          <a class="btn ghost" href="biodata.html">View Bio-data</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made for VTU Web Technology Lab Assignment-1 • Vaishnavi V</p>
+  </footer>
+</body>
 </html>
